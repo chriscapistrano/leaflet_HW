@@ -17,7 +17,7 @@ var myMap = L.map("map", {
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 function markerSize(mag) {
-    return mag * 1000;
+    return mag * 10000;
   }
   
 
@@ -55,8 +55,8 @@ d3.json(queryUrl, function(data) {
 
         var markers = L.circle([location.coordinates[1], location.coordinates[0]], {
             color: "red",
-            fillColor: markerSize(property.mag),
-            fillOpacity: 0.40,
+            fillColor: "green",
+            fillOpacity: 0.50,
             //radius: 10000  
             radius: markerSize(property.mag)
         })
